@@ -18,7 +18,19 @@ $container->loadFromExtension($extension->getAlias());
 //$loader->load('services.yml');
 
 $container->compile();
+//$tm = $container->get('teste_manager');
 
-$tm = $container->get('teste_manager');
+$Pedido = $container->get('pedido');
+$Cafe = $container->get('cafe');
+$Creme = $container->get('creme');
 
-var_dump($tm);
+$Cafe->addProduto($Creme);
+$Imprime = $container->get('imprime_terminal');
+
+
+
+$Pedido->addProduto($Cafe);
+
+$Pedido->attach($Imprime);
+
+$Pedido->fecharPedido();

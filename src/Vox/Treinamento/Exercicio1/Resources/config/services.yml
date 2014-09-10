@@ -3,10 +3,30 @@ parameters:
     mailer.transport: sendmail
 
 services:
-    teste:
-        class:     "Vox\Treinamento\DependencyInjection\Teste"
+    pedido:
+        class:     "Vox\Treinamento\Exercicio1\\Pedido"
+        arguments: ['']
 
-    teste_manager:
-        class:     "Vox\Treinamento\DependencyInjection\TesteManager"
-        arguments: ["@teste"]
+    chantilly:
+        class:     "Vox\Treinamento\Exercicio1\Chantilly"
+        arguments: [2.50]
+
+    chocolate:
+        class:     "Vox\Treinamento\Exercicio1\Chocolate"
+        arguments: [1.50]
+
+    leite:
+        class:     "Vox\Treinamento\Exercicio1\Leite"
+        arguments: [1.50]
+
+    creme:
+        class:     "Vox\Treinamento\Exercicio1\Creme"
+        arguments: [2.50]
+
+    cafe:
+        class:     "Vox\Treinamento\Exercicio1\Cafe"
+        arguments: [1.50]
+    imprime_terminal:
+        class:     "Vox\Treinamento\Exercicio1\ImprimeTerminal"
+        arguments: [1.50]
         
